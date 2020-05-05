@@ -1,0 +1,13 @@
+:root {
+    --main-color: red;
+    --second-color: #4433dd;
+    --main-stack: sans-serif;
+
+    --main-font-color: #1a1a1a;
+    --main-bg-color: white;
+}
+
+body {
+    background: var(--main-color);
+    font-family: var(--main-stack);
+}

@@ -1,0 +1,15 @@
+:root {
+    --main-font-color: #1a1a1a;
+    --main-bg-color: white;
+    --main-theme-color: rgb(243, 168, 47);
+    --light-white: #f5f5f5;
+    --light-gray: #ccc;
+    --light-black: #282a39;
+    --font-body-stack: Raleway, Charcoal, sans-serif;
+    --font-heading-stack: "PT Serif", sans-serif;
+}
+
+body {
+    background: var(--main-color);
+    font-family: var(--main-stack);
+}

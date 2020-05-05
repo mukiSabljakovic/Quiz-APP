@@ -10,7 +10,7 @@ const App = (() => {
  const taglineEl = document.querySelector(".jabquiz__tagline");
  const choicesEl = document.querySelector(".jabquiz__choices");
  const progressInnerEl = document.querySelector(".progress__inner");
- const nextButtonEl = document.querySelector(".next");
+ constnextButtonEl = document.querySelector(".next");
  const restartButtonEl = document.querySelector(".restart");
 
  const q1 = new Question(
@@ -62,8 +62,6 @@ const listeners = _ => {
         renderAll();
         // 3. restore the next button
        nextButtonEl.style.opacity = 1;
-        // 4. restore tagline
-       setValue(taglineEl, `Pick an option below!`);
     })
 }
 

@@ -62,8 +62,6 @@ const listeners = _ => {
         renderAll();
         // 3. restore the next button
        nextButtonEl.style.opacity = 1;
-        // 4. restore tagline
-       setValue(taglineEl, `Pick an option below!`);
     })
 }
 

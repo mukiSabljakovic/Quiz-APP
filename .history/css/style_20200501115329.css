@@ -1,0 +1,78 @@
+@import url("https://fonts-googleapis.com/css?family=Raleway|PT+Serif:700");
+
+
+:root {
+    --main-font-color: #1a1a1a;
+    --main-bg-color: white;
+    --main-theme-color: rgb(243, 168, 47);
+    --light-white: #f5f5f5;
+    --light-gray: #ccc;
+    --light-black: #282a39;
+    --container-width: 768px;
+    --font-body-stack: Raleway, Charcoal, sans-serif;
+    --font-heading-stack: "PT Serif", sans-serif;
+
+}
+
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.button {
+    padding: 1rem 3.8rem;
+    text-transform: uppercase;
+    border: 1px solid #eee;
+    outline: 0;
+    opacity: .9;
+    font-weight: bold;
+    transition: .3s all ease;
+}
+
+.button:hover {
+    opacity: 1;
+    background: var(--light-black);
+    color: white;
+}
+
+.button.button--bordered {
+    border: 1px solid var(--light-black);
+}
+
+.jabquiz {
+    padding: 2rem 1.4rem;
+}
+
+.jabquiz__question-box {
+    text-align: center;
+}
+
+.jabquiz__question {
+    font-family: var(--font-heading-stack);
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    padding: 0.8rem 4rem;
+    color: var(--main-font-color);
+}
+
+.jabquiz__tracker {
+    font-family: var(--font-body-stack);
+    color: var(--light-black);
+    padding: 1rem;
+}
+
+
+
+
+
+
+
+
+

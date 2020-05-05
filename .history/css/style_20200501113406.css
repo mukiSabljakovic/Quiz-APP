@@ -1,0 +1,9 @@
+:root {
+    --main-color: red;
+    --main-stack: sans-serif;
+}
+
+body {
+    background: var(--main-color);
+    font-family: var(--main-stack);
+}

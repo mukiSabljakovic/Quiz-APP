@@ -10,7 +10,7 @@ const App = (() => {
  const taglineEl = document.querySelector(".jabquiz__tagline");
  const choicesEl = document.querySelector(".jabquiz__choices");
  const progressInnerEl = document.querySelector(".progress__inner");
- const nextButtonEl = document.querySelector(".next");
+ const nextButtonEL = document.querySelector(".next");
  const restartButtonEl = document.querySelector(".restart");
 
  const q1 = new Question(
@@ -45,28 +45,6 @@ const q5 = new Question(
 
 const quiz = new Quiz([q1, q2, q3, q4, q5]);
 
-const listeners = _ => {
-   nextButtonEl.addEventListener("click", function() {
-        const selectedRadioElem = document.querySelector('input[name="choice"]:checked');
-        if (selectedRadioElem) {
-          const key = Number(selectedRadioElem.getAttribute("data-order"));  
-          quiz.guess(key);
-          renderAll();
-        }
-    })
-
-    restartButtonEl.addEventListener("click", function() {
-        // 1. reset the quiz
-        quiz.reset();
-        // 2. renderAll
-        renderAll();
-        // 3. restore the next button
-       nextButtonEl.style.opacity = 1;
-        // 4. restore tagline
-       setValue(taglineEl, `Pick an option below!`);
-    })
-}
-
 const setValue = (elem, value) => {
     elem.innerHTML = value;
 }
@@ -84,7 +62,7 @@ const renderChoicesElements = _ => {
     currentChoices.forEach((elem, index) => {
         markup += `
             <li class="jabquiz__choice">
-            <input type="radio" name="choice" data-order="${index}" id="choice${index}" class="jabquiz__input">
+            <input type="radio" name="choice" id="choice${index}" class="jabquiz__input">
             <label for="choice${index}" class="jabquiz__label">
                 <i></i>
                <span>${elem}</span>
@@ -115,28 +93,18 @@ const launch = (width, maxPercent) => {
         }
     }, 3)
 }
-
-
 const renderProgress = _ => {
     // 1. width
     const currentWidth = getPercentage(quiz.currentIndex, quiz.questions.length);
     // 2. launch(0, width)
-    launch(0, currentWidth);
-}
 
-const renderEndScreen = _ => {
-    setValue(quizQuestionEl, `Great Job!`);
-    setValue(taglineEl, `Complete!`);
-    setValue(trackerEl, `Your score: ${getPercentage(quiz.score, quiz.questions.length)}%`);
-   nextButtonEl.style.opacity = 0;
-    renderProgress();
 }
+renderProgress();
 
 const renderAll = _ => {
 
     if (quiz.hasEnded()) {
         // renderEndScreen
-        renderEndScreen();
     } else {
         // 1. render the question
         renderQuestion();
@@ -145,15 +113,12 @@ const renderAll = _ => {
         // 3. render Tracker
         renderTracker();
         // 4. render Progress
-        renderProgress();
     }
 }
 
 return {
-    renderAll: renderAll,
-    listeners: listeners
+    renderAll: renderAll
 }
 })();
 
 App.renderAll();
-App.listeners();

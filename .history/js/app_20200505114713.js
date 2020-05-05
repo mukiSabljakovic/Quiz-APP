@@ -10,7 +10,7 @@ const App = (() => {
  const taglineEl = document.querySelector(".jabquiz__tagline");
  const choicesEl = document.querySelector(".jabquiz__choices");
  const progressInnerEl = document.querySelector(".progress__inner");
- const nextButtonEl = document.querySelector(".next");
+ const nextButtonEL = document.querySelector(".next");
  const restartButtonEl = document.querySelector(".restart");
 
  const q1 = new Question(
@@ -46,7 +46,7 @@ const q5 = new Question(
 const quiz = new Quiz([q1, q2, q3, q4, q5]);
 
 const listeners = _ => {
-   nextButtonEl.addEventListener("click", function() {
+    nextButtonEL.addEventListener("click", function() {
         const selectedRadioElem = document.querySelector('input[name="choice"]:checked');
         if (selectedRadioElem) {
           const key = Number(selectedRadioElem.getAttribute("data-order"));  
@@ -61,9 +61,7 @@ const listeners = _ => {
         // 2. renderAll
         renderAll();
         // 3. restore the next button
-       nextButtonEl.style.opacity = 1;
-        // 4. restore tagline
-       setValue(taglineEl, `Pick an option below!`);
+        nextButtonEl.style.opacity = 1;
     })
 }
 
@@ -128,7 +126,7 @@ const renderEndScreen = _ => {
     setValue(quizQuestionEl, `Great Job!`);
     setValue(taglineEl, `Complete!`);
     setValue(trackerEl, `Your score: ${getPercentage(quiz.score, quiz.questions.length)}%`);
-   nextButtonEl.style.opacity = 0;
+    nextButtonEL.style.opacity = 0;
     renderProgress();
 }
 

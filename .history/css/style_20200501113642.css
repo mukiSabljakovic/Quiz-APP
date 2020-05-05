@@ -1,0 +1,12 @@
+:root {
+    --main-font-color: #1a1a1a;
+    --main-bg-color: white;
+    --main-theme-color: rgb(243, 168, 47);
+    --light-white: #f5f5f5;
+    --light-gray: #ccc;
+}
+
+body {
+    background: var(--main-color);
+    font-family: var(--main-stack);
+}
